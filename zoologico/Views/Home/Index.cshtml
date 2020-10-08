@@ -1,0 +1,23 @@
+﻿@model  zoologico.Models.AnimalesViewModels
+@{
+    Layout = "_Layout";
+}
+<div class="slides">
+    <img src="images/carousel@(Model.Imagen).jpg">
+</div>
+<h1>Clasificación de los vertebrados</h1>
+<div class="clases">
+
+    @foreach (var clse in Model.Clase)
+    {
+        <div>
+            <a href="~/@clse.Nombre.Replace(" ","-")">
+                <img src="~/clases/@(clse.Id).jpg">
+                <h1>@clse.Nombre</h1>
+                <p>@clse.Descripcion</p>
+            </a>
+        </div>
+    }
+
+
+</div>

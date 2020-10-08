@@ -1,0 +1,36 @@
+﻿@inject zoologico.Services.ClaseServices servicio
+<html>
+<head>
+    <title>ZooPlanet</title>
+    <link href="~/StyleSheet.css" rel="stylesheet">
+    <link href="~/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><a href="~/Home"><b>Zoo</b>Planet</a></h1>
+        <nav>
+            <ul>
+                <li><a href="~/Home">Home</a></li>
+                <li>
+                    <a href="#">Clasificación</a>
+                    <ul>
+                        @foreach (var srvcs in servicio.Clases)
+                        {
+                            <li><a href="~/@srvcs.Nombre">@srvcs.Nombre</a></li>
+
+                        }
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+
+
+    </main>
+    <footer>Programación Web</footer>
+
+</body>
+</html>

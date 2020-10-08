@@ -1,0 +1,25 @@
+﻿@model zoologico.Models.Clase
+@{
+    Layout = "_Layout";
+}
+
+<h1>@Model.Especies</h1>
+
+<ul class="especies">
+
+    @foreach (var e in Model.Especies)
+    {
+        <li>
+            <div>
+                <img src="especies/@(e.Id).jpg">
+            </div>
+            <h2>@e.Especie</h2>
+            <p><label>Habitat: </label>@e.Habitat</p>
+            <p><label>Peso: </label>@e.Peso</p>
+            <p><label>Tamaño: </label>@e.Tamaño</p>
+            <p>@e.Observaciones</p>
+        </li>
+
+    }
+
+</ul>
